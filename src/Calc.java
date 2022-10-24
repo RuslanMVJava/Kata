@@ -3,27 +3,7 @@ import java.lang.reflect.Array;
 public class Calc {
     Calc(String[] Result) throws Exceptions {
         String[] mass = new String[]{"-","/","+","*"};
-//        String[] Num = new String[]{"1","2","3","5","6","7","8","9","10"};
 
-//        //*Проверка условий.
-//        boolean a = false;
-//        boolean b = false;
-//        for (int i = 0; i < 9; i++) {
-//            if (Result[0].equals(Num[i])){
-//                a = true;
-//                break;
-//            }
-//        }
-//        for (int i = 0; i < 9; i++) {
-//            if (Result[1].equals(Num[i])){
-//                b = true;
-//                break;
-//            }
-//        }
-//        if ((a == false) || (b == false)){
-//            System.out.println("Исключение");
-//        }
-//        //*
         Check check = new Check(Result);
         String[] tempArray = check.getResult();
 
