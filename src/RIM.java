@@ -1,29 +1,34 @@
 public class RIM {
+    public String temp = "";
 
     RIM(String[] Result){
         int result = Integer.parseInt(Result[2]);
         int temp = 0;
 
-        System.out.printf("Ответ: ");
+
         if ((result <= 10) && (result > 0)){
             out(result);
-        } else if ((result > 10) && (result <= 30)) {
-            for (int i = 0; i < 3; i++) {
+        } else if ((result > 10) && (result < 40)) {
+            for (int i = 0; i < 4; i++) {
                 if (result >= 10) {
                     result = result - 10;
+                    temp = i;
                 }else {
                     temp = i;
                     break;
                 }
             }
-            System.out.printf("X".repeat(temp));
+
+            this.temp = "X".repeat(temp);
             out(result);
         } else if ((result >= 40) && (result < 50)) {
-            System.out.printf("XL");
+
+            this.temp = "XL";
             result = result - 40;
             out(result);
         } else if ((result >= 50) && (result < 60)){
-            System.out.printf("L");
+
+            this.temp = "L";
             result = result - 50;
             out(result);
         } else if ((result >= 60) && (result<90)) {
@@ -36,25 +41,36 @@ public class RIM {
                     break;
                 }
             }
-            System.out.printf("L" + "X".repeat(temp));
+
+            this.temp = "L"+"X".repeat(temp);
             out(result);
         } else if ((result >= 90) && (result < 100)) {
-            System.out.printf("XC");
+
+            this.temp = "XC";
             result = result - 90;
             out(result);
         } else if (result >= 100) {
-            System.out.printf("C");
+
+            this.temp = "C";
             result = result - 100;
             out(result);
         }
 
     }
-    public static void out(int result){
+    public void out(int result){
         String[] NumRim = new String[]{"I","II","III","IV","V","VI","VII","VIII","IX","X","L","C",""};
         if (result == 0) {
-            System.out.println(NumRim[12]);
-        }else System.out.println(NumRim[result-1]);
+
+            this.temp = this.temp + NumRim[12];
+        }else {
+            this.temp = this.temp + NumRim[result - 1];
+
+        }
         
         
+    }
+
+    public String getTemp() {
+        return temp;
     }
 }

@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 
 public class Calc {
+    public String temp;
     Calc(String[] Result) throws Exceptions {
         String[] mass = new String[]{"-","/","+","*"};
 
@@ -28,5 +29,10 @@ public class Calc {
         }
         //*
         Out out = new Out(Result);
+        this.temp = out.getTemp();
+    }
+
+    public String getTemp() {
+        return temp;
     }
 }

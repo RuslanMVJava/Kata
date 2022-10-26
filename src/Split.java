@@ -1,4 +1,5 @@
 public class Split {
+    public String temp;
     Split(String Line) throws Exceptions {
         String[] Result = new String[6];
 
@@ -41,6 +42,11 @@ public class Split {
             Result[3] = "*";
         }
         Calc calc = new Calc(Result);
+        this.temp = calc.getTemp();
 
+    }
+
+    public String getTemp() {
+        return temp;
     }
 }
